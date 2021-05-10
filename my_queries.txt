@@ -1,0 +1,9 @@
+1. What is k-fold cross validation and why do we use it?
+K-fold cross validation is a technique by which we can shuffle the creation of train-dev split of data. It is mostly used during hyper parameter tuning phase. Suppose that we fix a certain value of a hyper-parameter during training and we find a certain value of the model's performance. We can not be sure about the fact that it is the true picture of the performance of the model with that setting of hyper-parameter unless we shuffle the data and even then the model gives nearly equal performance values.
+The main idea is that we want our model to generalise well and we want to ensure that the way we sample the data, we can minimise the chances of the results being biased to a certain combination of data or to a certain part of the population.
+So k-fold, where k is a variable number, helps us to create k different sets of training and validation sets and run the same model with the defined configuration of hyper parameters on them and check the model performance. the model's actual performance can then be an average of the k-fold run outputs.
+
+2. Is k-fold cross validation applicable for CNN?
+From what I understood, there is no problem to apply k-fold cross validation to CNN theoretically. However, from a practical aspect, the big question is how many parameter value combination can we try out for CNN. So there are a lot many hyper-parameters in a CNN model, like number of layers, number of filters, kernel size , padding, strides etc. Now, to create combination of these hyper-parameters and run multiple times will need a strong computation capability.
+Also, as per a resource (https://datascience.stackexchange.com/questions/47797/using-cross-validation-technique-for-a-cnn-model), the problem with most CNN architectures is that the model overfits the data and hence cross validation technique does not work here well. Although, I do not have the logical explanation to correlate the ideas.
+
